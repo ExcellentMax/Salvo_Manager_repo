@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:id="@+id/fullLayout">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/parentLayout"
+        android:paddingTop="4dp"
+        android:paddingBottom="4dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:padding="3dp"
+            android:text="Unknown device"
+            android:id="@+id/parentName"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:padding="3dp"
+            android:text="00:00:00:00:00:00"
+            android:id="@+id/parentMAC"
+            android:layout_below="@+id/parentName"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:text="more"
+            android:textSize="12sp"
+            android:textColor="#FFFFFFFF"
+            android:background="@color/orange"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textAllCaps="true"
+            android:id="@+id/expandButton"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/parentName" />
+
+        <ProgressBar
+            style="?android:attr/progressBarStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            android:layout_marginRight="15dp"
+            android:layout_centerVertical="true"
+            android:layout_toStartOf="@+id/expandButton" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/childLayout"
+        android:layout_below="@+id/parentLayout"
+        android:layout_alignParentEnd="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Beacon name:"
+            android:id="@+id/beaconNameLabel"
+            android:gravity="center_vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:id="@+id/beaconNameEditText"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:textSize="14sp"
+            android:maxLength="14" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Major:"
+            android:id="@+id/beaconMajorLabel"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/beaconNameLabel"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/beaconMajorEditText"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@+id/beaconNameEditText"
+            android:layout_alignParentEnd="true"
+            android:textSize="14sp"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Minor:"
+            android:id="@+id/beaconMinorLabel"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/beaconMajorLabel"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/beaconMinorEditText"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@+id/beaconMajorEditText"
+            android:layout_alignParentEnd="true"
+            android:textSize="14sp"
+            android:maxLength="5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Broadcasting interval:"
+            android:id="@+id/beaconIntervalLabel"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:layout_below="@+id/beaconMinorLabel"
+            android:layout_alignParentEnd="false"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/beaconIntervalEditText"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@+id/beaconMinorEditText"
+            android:layout_alignParentEnd="true"
+            android:textSize="14sp"
+            android:maxLength="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Transmission power:"
+            android:id="@+id/tPowerLabel"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:textIsSelectable="false"
+            android:layout_below="@+id/beaconIntervalLabel"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/tPowerEditText"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@+id/beaconIntervalEditText"
+            android:layout_alignParentEnd="true"
+            android:textSize="14sp"
+            android:maxLength="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="Connection mode:"
+            android:id="@+id/connectableLabel"
+            android:singleLine="true"
+            android:gravity="center_vertical"
+            android:textIsSelectable="false"
+            android:layout_below="@+id/tPowerLabel"
+            android:layout_alignParentStart="true" />
+
+        <EditText
+            android:layout_width="160dp"
+            android:layout_height="40dp"
+            android:inputType="number"
+            android:ems="10"
+            android:id="@+id/connectableEditText"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@+id/tPowerEditText"
+            android:layout_alignParentEnd="true"
+            android:textSize="14sp"
+            android:maxLength="1" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Update"
+            android:id="@+id/softRebootButton"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_below="@+id/connectableEditText"
+            android:layout_centerHorizontal="true"
+            android:background="#ffebbe"
+            android:textColor="#FFFFFFFF"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+    </RelativeLayout>
+
+</RelativeLayout>
