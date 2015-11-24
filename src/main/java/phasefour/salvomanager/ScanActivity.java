@@ -48,6 +48,7 @@ public class ScanActivity extends Activity implements BluetoothAdapter.LeScanCal
 
         tempHandler.post(tempRefreshList);
         handler.post(refreshList);
+
     }
 
 
